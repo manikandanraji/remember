@@ -1,0 +1,128 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 100vh;
+  background: var(--tertiaryColor);
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+ul.notebooks {
+  list-style-type: none;
+  margin: 1rem 0;
+  color: var(--secondaryColor);
+}
+
+ul.notebooks li,
+.user,
+.new-notebook {
+  padding: 0.2rem 1.4rem;
+}
+
+ul.notebooks li:hover {
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--primaryColor);
+}
+
+ul.notebooks li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.notebooks li svg {
+  display: none;
+}
+
+.selected-notebook {
+  background: var(--bg);
+  color: var(--primaryColor);
+}
+
+.new-notebook {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 1rem;
+  border-top: 1px solid var(--ruler);
+}
+
+.new-notebook:hover {
+  cursor: pointer;
+}
+
+.new-notebook svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--primaryColor);
+  margin-right: 0.4rem;
+}
+
+.notes {
+  padding: 0.2rem 1.4rem;
+  padding-left: 2rem;
+  display: none;
+}
+
+.notes p {
+  cursor: pointer;
+}
+
+.notes p:hover {
+  color: var(--primaryColor);
+}
+
+.selected-note-sidebar {
+  color: var(--primaryColor);
+}
+
+.selected-note-sidebar span {
+  padding-right: 0.4rem;
+}
+
+span + svg {
+  position: relative;
+  top: 1.5px;
+  height: 10px;
+  width: 10px;
+}
+
+@media screen and (max-width: 1093px) {
+  .sidebar {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .sidebar {
+    width: 200px;
+    border-right: 1px solid var(--ruler);
+  }
+
+  .notes {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar {
+    position: absolute;
+    position: fixed;
+    height: 100vh;
+		opacity: 0.95;
+  }
+
+  ul.notebooks li:hover svg {
+    fill: var(--primaryColor);
+    display: block;
+    position: relative;
+    top: -1px;
+    height: 15px;
+    width: 15px;
+  }
+}

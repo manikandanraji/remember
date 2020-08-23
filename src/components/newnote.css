@@ -1,0 +1,48 @@
+.new-note {
+  /* to center the modal */
+  position: relative;
+  top: 30%;
+  transform: translateY(-50%);
+  margin: auto;
+
+  width: 390px;
+  background-color: var(--bg);
+  border-radius: 4px;
+}
+
+.header {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--ruler);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header svg {
+  fill: var(--primaryColor);
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.content {
+  padding: 0.5rem 1rem;
+}
+
+.new-note input {
+  background-color: var(--tertiaryColor);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--tertiaryColor);
+  margin: 0.5rem 0;
+  width: 90%;
+  color: var(--primaryColor);
+	position: relative;
+	top: -6px;
+}
+
+@media screen and (max-width: 440px) {
+  .new-note {
+		width: 320px;
+  }
+}

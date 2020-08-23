@@ -1,0 +1,71 @@
+.editor {
+  position: relative;
+  margin-left: 500px;
+}
+
+.note-cover {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#editorjs {
+  margin-top: 0.5rem;
+}
+
+.input-cover input {
+  display: none;
+}
+
+.save-options {
+  margin: 0 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.save-options svg {
+  fill: var(--primaryColor);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 1093px) {
+  .editor {
+    margin-left: 400px;
+  }
+
+  #editorjs {
+    padding: 0 1rem;
+  }
+
+  .save-options {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 896px) {
+  .editor {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #editorjs {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #editorjs {
+    font-size: 1rem;
+  }
+
+  .editor {
+    margin-left: 0;
+  }
+}

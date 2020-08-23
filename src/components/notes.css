@@ -1,0 +1,89 @@
+.notes-panel {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: var(--bg);
+  margin-left: 200px;
+  border-right: 1px solid var(--ruler);
+  border-left: 1px solid var(--ruler);
+	z-index: 4;
+}
+
+.note-preview {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ruler);
+}
+
+.selected-note {
+  border-left: 2px solid var(--accent);
+}
+
+.note-preview:hover {
+  cursor: pointer;
+}
+
+.note-preview p {
+  color: var(--secondaryColor);
+  font-size: 0.9rem;
+}
+
+.search-notes {
+  border-bottom: 1px solid var(--ruler);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-notes input {
+  padding: 0.4rem 1rem;
+  background-color: var(--tertiaryColor);
+  border: 1px solid var(--tertiaryColor);
+  border-radius: 4px;
+  color: var(--primaryColor);
+  width: 85%;
+}
+
+.search-notes svg {
+  fill: var(--primaryColor);
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
+.search-notes svg:hover {
+  fill: var(--accent);
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+}
+
+.delete-notebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+	cursor: pointer;
+}
+
+.delete-notebook svg {
+	margin-right: 0.4rem;
+	position: relative;
+	top: -2px;
+	fill: var(--primaryColor);
+}
+
+@media screen and (max-width: 1093px) {
+  .notes-panel {
+		width: 250px;
+		margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 896px) {
+	.notes-panel {
+		display: none;
+	}
+}

@@ -1,0 +1,28 @@
+# dependencies
+/node_modules
+functions/node_modules
+/.pnp
+.pnp.js
+.env
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+functions/ui-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+# firebase
+.firebaserc
+firebase.json
