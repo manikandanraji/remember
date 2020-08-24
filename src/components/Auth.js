@@ -9,9 +9,9 @@ const Auth = () => {
   const signup = () => setAuth("SIGNUP");
 
   if (auth === "SIGNUP") {
-    return <Signup login={login} />
+    return <Signup login={login} />;
   } else {
-    return <Login signup={signup} />
+    return <Login signup={signup} />;
   }
 };
 

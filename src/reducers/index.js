@@ -7,10 +7,10 @@ import modal from "./modal";
 import sidebar from "./sidebar";
 
 export default combineReducers({
-	notebooks,
+  notebooks,
   notes,
-	note,
+  note,
   theme,
-	modal,
-	sidebar,
+  modal,
+  sidebar,
 });

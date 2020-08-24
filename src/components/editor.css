@@ -3,6 +3,11 @@
   margin-left: 500px;
 }
 
+.editor .header {
+  background-color: var(--bg);
+	margin-bottom: 0;
+}
+
 .note-cover {
   width: 100%;
   height: 140px;
@@ -34,7 +39,7 @@
 
 @media screen and (max-width: 1093px) {
   .editor {
-    margin-left: 400px;
+    margin-left: 430px;
   }
 
   #editorjs {

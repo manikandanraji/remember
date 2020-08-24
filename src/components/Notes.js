@@ -17,7 +17,7 @@ const Notes = () => {
     });
   };
 
-  const searchNotesHandler = e => {
+  const searchNotesHandler = (e) => {
     if (e.target.value.trim()) {
       dispatch(searchNotes(e.target.value));
     } else {

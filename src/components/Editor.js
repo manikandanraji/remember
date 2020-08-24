@@ -2,10 +2,11 @@ import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import Options from "./Options";
-import { OptionsIcon } from "./Icons";
+import { HamburgerIcon, OptionsIcon, CloseIcon } from "./Icons";
 import { getNotes } from "../reducers/notes";
 import { clearNote, getNote } from "../reducers/note";
 import { closeOptionsModal, openOptionsModal } from "../reducers/modal";
+import { openSidebar, closeSidebar } from "../reducers/sidebar";
 import { uploadImage } from "../utils";
 import createNewEditor from "../utils/createNewEditor";
 import { saveNote, deleteNote, updateNoteFromDb } from "../utils/firestore";
@@ -19,7 +20,6 @@ const Editor = () => {
 
   const dispatch = useDispatch();
   const note = useSelector((state) => state.note);
-  // const theme = useSelector((state) => state.theme.theme);
   const { optionsModal } = useSelector((state) => state.modal);
 
   if (editor && note.data) {
@@ -38,6 +38,7 @@ const Editor = () => {
 
   const addCoverHandler = async (e) => {
     const file = e.target.files[0];
+
     if (file) {
       const res = await uploadImage(file);
       await updateNoteFromDb(note, { cover: res.file.url });
@@ -73,6 +74,10 @@ const Editor = () => {
 
   return (
     <div className="editor">
+      <div className="header">
+        <HamburgerIcon onClick={() => dispatch(openSidebar())} />
+        <h3 onClick={() => dispatch(closeSidebar())}>Remember</h3>
+      </div>
       <div className="input-cover">
         <label htmlFor="add-cover">
           <img

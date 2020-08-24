@@ -22,9 +22,9 @@ const noteSlice = createSlice({
     clearNote(state, action) {
       return {};
     },
-		updateNote(state, action) {
-			return { ...state, ...action.payload }
-		}
+    updateNote(state, action) {
+      return { ...state, ...action.payload };
+    },
   },
   extraReducers: {
     [getNote.fulfilled]: (state, action) => action.payload,

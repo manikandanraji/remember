@@ -19,7 +19,11 @@ const Note = ({ note }) => {
       onClick={() => getNoteHandler(note.id)}
     >
       <h4>{note.title}</h4>
-			<p>{note.description.length > 60 ? note.description.substr(0, 60) + '...' : note.description}</p>
+      <p>
+        {note.description.length > 60
+          ? note.description.substr(0, 60) + "..."
+          : note.description}
+      </p>
     </div>
   );
 };

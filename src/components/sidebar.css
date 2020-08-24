@@ -82,22 +82,36 @@ ul.notebooks li {
   padding-right: 0.4rem;
 }
 
-.username-close svg {
-  position: relative;
-  top: 2px;
-  left: 8px;
-  cursor: pointer;
-}
-
 span + svg {
-  fill: var(--primaryColor);
+  fill: var(--secondaryColor);
   height: 15px;
   width: 15px;
 }
 
+span + svg:hover {
+  fill: var(--primaryColor);
+}
+
+.user-theme {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theme-switch {
+  position: relative;
+  right: 1rem;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: var(--bg);
+  border: 2px solid var(--accent);
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1093px) {
   .sidebar {
-    width: 150px;
+    width: 180px;
   }
 }
 
@@ -115,7 +129,7 @@ span + svg {
 @media screen and (max-width: 600px) {
   .sidebar {
     /* transform: translateX(-100%); */
-		display: none;
+    display: none;
   }
 }
 
@@ -132,6 +146,6 @@ span + svg {
 
 @media screen and (max-width: 500px) {
   .sidebar {
-		font-size: 1rem;
+    font-size: 1rem;
   }
 }

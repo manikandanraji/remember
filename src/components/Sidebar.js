@@ -8,6 +8,7 @@ import { getNotebooks } from "../reducers/notebooks";
 import { getNotes } from "../reducers/notes";
 import { getNote } from "../reducers/note";
 import { closeSidebar } from "../reducers/sidebar";
+import { changeTheme } from "../reducers/theme";
 import { openNoteModal, openNotebookModal } from "../reducers/modal";
 import "./sidebar.css";
 
@@ -38,9 +39,12 @@ const Sidebar = () => {
 
   return (
     <div className={`sidebar ${sidebar ? "mobile" : ""}`}>
-      <div className="username-close">
+      <div className="user-theme">
         <span className="user">Manikandan</span>
-				{sidebar && <CloseIcon onClick={() => dispatch(closeSidebar())}/>}
+        <div
+          className="theme-switch"
+          onClick={() => dispatch(changeTheme())}
+        ></div>
       </div>
 
       <ul className="notebooks">

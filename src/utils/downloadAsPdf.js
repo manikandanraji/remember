@@ -3,7 +3,7 @@ import { jsPDF } from "jspdf";
 
 export default ({ title, bg, dom }) => {
   html2canvas(dom, {
-		scale: 5,
+    scale: 5,
     allowTaint: true,
     useCORS: true,
     backgroundColor: bg,
