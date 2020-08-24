@@ -47,7 +47,7 @@ export default () => {
       linkTool: {
         class: LinkTool,
         config: {
-          endpoint: process.env.REACT_APP_LINK_PREVIEW_ENDPOINT,
+          endpoint: process.env.REACT_APP_LINK_PREVIEW,
         },
       },
       image: {

@@ -1,10 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Note from "./Note";
-import Modal from "./Modal";
-import NewNote from "./NewNote";
-import { DeleteIcon, PencilIcon } from "./Icons";
-import { openNoteModal } from "../reducers/modal";
+import { DeleteIcon } from "./Icons";
 import { getNotebooks } from "../reducers/notebooks";
 import { getNotes, searchNotes } from "../reducers/notes";
 import { deleteNotebook } from "../utils/firestore";
@@ -13,11 +10,6 @@ import "./notes.css";
 const Notes = () => {
   const dispatch = useDispatch();
   const notes = useSelector((state) => state.notes);
-  const { noteModal } = useSelector((state) => state.modal);
-
-  const addNoteHandler = () => {
-    dispatch(openNoteModal());
-  };
 
   const deleteNotebookHandler = () => {
     deleteNotebook(notes.notebook).then(() => {
@@ -41,23 +33,16 @@ const Notes = () => {
           placeholder="search notes"
           onChange={searchNotesHandler}
         />
-        <PencilIcon onClick={addNoteHandler} />
       </div>
 
       {notes?.notes?.map((note) => (
         <Note key={note.id} note={note} />
       ))}
 
-      {!notes.count && (
+      {notes.count < 1 && (
         <div className="delete-notebook" onClick={deleteNotebookHandler}>
           <DeleteIcon /> <span>Delete Notebook</span>
         </div>
-      )}
-
-      {noteModal && (
-        <Modal>
-          <NewNote />
-        </Modal>
       )}
     </div>
   );

@@ -8,7 +8,6 @@ import { clearNote, getNote } from "../reducers/note";
 import { closeOptionsModal, openOptionsModal } from "../reducers/modal";
 import { uploadImage } from "../utils";
 import createNewEditor from "../utils/createNewEditor";
-// import downloadAsPdf from "../utils/downloadAsPdf";
 import { saveNote, deleteNote, updateNoteFromDb } from "../utils/firestore";
 import DefaultCover from "../assets/default_cover.png";
 import "./editor.css";

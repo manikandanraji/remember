@@ -7,6 +7,8 @@
     "@editorjs/editorjs": "^2.18.0",
     "@editorjs/embed": "^2.3.1",
     "@editorjs/header": "^2.5.0",
+    "@editorjs/image": "^2.5.0",
+    "@editorjs/link": "^2.2.1",
     "@editorjs/list": "^1.5.0",
     "@editorjs/table": "git+https://github.com/alexiej/table.git",
     "@reduxjs/toolkit": "^1.4.0",
@@ -44,8 +46,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@editorjs/image": "^2.5.0",
-    "@editorjs/link": "^2.2.1"
-  }
+  "devDependencies": {}
 }

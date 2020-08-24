@@ -3,24 +3,30 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "./Modal";
 import AddNotebook from "./AddNotebook";
 import NewNote from "./NewNote";
-import { NotebookIcon, PencilIcon } from "./Icons";
+import { NotebookIcon, CloseIcon, PencilIcon } from "./Icons";
 import { getNotebooks } from "../reducers/notebooks";
 import { getNotes } from "../reducers/notes";
 import { getNote } from "../reducers/note";
-import { changeTheme } from "../reducers/theme";
+import { closeSidebar } from "../reducers/sidebar";
 import { openNoteModal, openNotebookModal } from "../reducers/modal";
 import "./sidebar.css";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
 
-  const { name } = useSelector((state) => state.user);
   const notebooks = useSelector((state) => state.notebooks);
   const selectedNote = useSelector((state) => state.note);
+  const sidebar = useSelector((state) => state.sidebar);
+
   const { notebook: selectedNotebook, notes } = useSelector(
     (state) => state.notes
   );
+
   const { noteModal, notebookModal } = useSelector((state) => state.modal);
+
+  const getNotesHandler = (notebook) => {
+    dispatch(getNotes(notebook));
+  };
 
   useEffect(() => {
     dispatch(getNotebooks());
@@ -30,15 +36,12 @@ const Sidebar = () => {
     }
   }, [dispatch, notebooks.length]);
 
-  const getNotesHandler = (notebook) => {
-    dispatch(getNotes(notebook));
-  };
-
   return (
-    <div className="sidebar">
-      <span className="user" onClick={() => dispatch(changeTheme())}>
-        {name}
-      </span>
+    <div className={`sidebar ${sidebar ? "mobile" : ""}`}>
+      <div className="username-close">
+        <span className="user">Manikandan</span>
+				{sidebar && <CloseIcon onClick={() => dispatch(closeSidebar())}/>}
+      </div>
 
       <ul className="notebooks">
         {notebooks.map((notebook) => (
@@ -66,7 +69,7 @@ const Sidebar = () => {
                       dispatch(getNote({ notebook, noteId: note.id }))
                     }
                   >
-                    {note.title.substr(0, 12) + "..."}
+                    {note.title}
                   </p>
                 ))}
               </div>

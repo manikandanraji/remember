@@ -301,6 +301,11 @@ iframe {
   border-radius: 4px;
 }
 
+/* Code Tool */
+.CodeMirror {
+	border-radius: 4px;
+}
+
 @media screen and (max-width: 650px) {
   .ce-toolbar--opened {
     background: var(--tertiaryColor);
@@ -330,3 +335,4 @@ iframe {
     height: 200px;
   }
 }
+

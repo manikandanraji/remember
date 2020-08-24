@@ -8,7 +8,8 @@
   padding-top: 1rem;
   display: flex;
   flex-direction: column;
-  z-index: 3;
+  z-index: 4;
+  transition: all 0.3s;
 }
 
 ul.notebooks {
@@ -33,10 +34,6 @@ ul.notebooks li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-ul.notebooks li svg {
-  display: none;
 }
 
 .selected-notebook {
@@ -85,11 +82,17 @@ ul.notebooks li svg {
   padding-right: 0.4rem;
 }
 
-span + svg {
+.username-close svg {
   position: relative;
-  top: 1.5px;
-  height: 10px;
-  width: 10px;
+  top: 2px;
+  left: 8px;
+  cursor: pointer;
+}
+
+span + svg {
+  fill: var(--primaryColor);
+  height: 15px;
+  width: 15px;
 }
 
 @media screen and (max-width: 1093px) {
@@ -111,18 +114,24 @@ span + svg {
 
 @media screen and (max-width: 600px) {
   .sidebar {
-    position: absolute;
-    position: fixed;
-    height: 100vh;
-		opacity: 0.95;
+    /* transform: translateX(-100%); */
+		display: none;
   }
+}
 
-  ul.notebooks li:hover svg {
-    fill: var(--primaryColor);
+@media screen and (max-width: 600px) {
+  .mobile {
+    position: absolute;
     display: block;
-    position: relative;
-    top: -1px;
-    height: 15px;
-    width: 15px;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    /* transform: translateX(0); */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sidebar {
+		font-size: 1rem;
   }
 }

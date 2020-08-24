@@ -4,7 +4,7 @@ import notes from "./notes";
 import note from "./note";
 import theme from "./theme";
 import modal from "./modal";
-import user from "./user";
+import sidebar from "./sidebar";
 
 export default combineReducers({
 	notebooks,
@@ -12,5 +12,5 @@ export default combineReducers({
 	note,
   theme,
 	modal,
-	user,
+	sidebar,
 });
