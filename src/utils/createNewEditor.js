@@ -8,12 +8,13 @@ import Embed from "@editorjs/embed";
 import Checklist from "@editorjs/checklist";
 import { uploadImage } from "./index";
 
-export default () => {
+export default (data) => {
   const editor = new EditorJS({
     logLevel: "ERROR",
     placeholder: "Start taking notes...",
     initialBlock: "paragraph",
     autofocus: true,
+    data,
     tools: {
       header: {
         class: Header,

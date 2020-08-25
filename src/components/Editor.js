@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import Options from "./Options";
@@ -13,18 +13,12 @@ import { saveNote, deleteNote, updateNoteFromDb } from "../utils/firestore";
 import DefaultCover from "../assets/default_cover.png";
 import "./editor.css";
 
-const editor = createNewEditor();
-
 const Editor = () => {
+  const [editor, setEditor] = useState(null);
+
   const dispatch = useDispatch();
   const note = useSelector((state) => state.note);
   const { optionsModal } = useSelector((state) => state.modal);
-
-  if (editor && note.data) {
-    editor.isReady.then(() => editor.render(JSON.parse(note.data)));
-  } else {
-    editor.isReady.then(() => editor.clear());
-  }
 
   const deleteNoteHandler = () => {
     deleteNote(note.notebook, note.id).then(() => {
@@ -70,6 +64,16 @@ const Editor = () => {
     });
   };
 
+  useEffect(() => {
+		if(editor) {
+			editor.isReady.then(() => editor.destroy());
+		}
+
+    if (note.data) {
+      setEditor(createNewEditor(JSON.parse(note.data)));
+    }
+  }, [note.data]);
+
   return (
     <div className="editor">
       <div className="editor-header">
@@ -106,7 +110,7 @@ const Editor = () => {
         </Modal>
       )}
 
-      <div style={{ display: !note.data ? "none" : "" }} id="editorjs"></div>
+      <div id="editorjs" style={{ display: !note.id ? "none" : "" }}></div>
     </div>
   );
 };

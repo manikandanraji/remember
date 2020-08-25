@@ -16,6 +16,7 @@ const Sidebar = () => {
 
   const notebooks = useSelector((state) => state.notebooks);
   const selectedNote = useSelector((state) => state.note);
+  const user = useSelector((state) => state.user);
   const sidebar = useSelector((state) => state.sidebar);
 
   const { notebook: selectedNotebook, notes } = useSelector(
@@ -39,7 +40,7 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${sidebar ? "mobile" : ""}`}>
       <div className="user-theme">
-        <span className="user">Manikandan</span>
+        <span className="user">{user.name}</span>
         <div
           className="theme-switch"
           onClick={() => dispatch(changeTheme())}

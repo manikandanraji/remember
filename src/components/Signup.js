@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import useInput from "../hooks/useInput";
 import { loginUser } from "../reducers/user";
-import { firebase } from "../firebase";
+import db, { firebase } from "../firebase";
 import "./signup.css";
 
 const Signup = ({ login }) => {
@@ -21,12 +21,19 @@ const Signup = ({ login }) => {
       firebase
         .auth()
         .createUserWithEmailAndPassword(email.value, password1.value)
-        .then(() => {
-          dispatch(loginUser({ email: email.value, name: username.value }));
-        })
-        .catch((err) => {
-          console.log(err.code);
-          console.log(err.message);
+        .then(async (data) => {
+
+					const user = {
+						id: data.user.uid, 
+						email: data.user.email,
+						name: username.value
+					}
+
+          await db.collection("users").doc(data.user.uid).set(user);
+
+          localStorage.setItem("user", JSON.stringify(user));
+
+					dispatch(loginUser(user));
         });
     }
   };

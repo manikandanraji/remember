@@ -36,6 +36,14 @@ h2 {
   margin-top: 1rem;
 }
 
+input {
+	padding: 0.5rem 1rem;
+	margin-bottom: 1rem;
+	width: 90%;
+	border-radius: 4px;
+	color: var(--primaryColor);
+}
+
 .login-signup {
   padding: 0 1rem;
   display: flex;

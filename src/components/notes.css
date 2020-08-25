@@ -44,6 +44,7 @@
   border-radius: 4px;
   color: var(--primaryColor);
   width: 98%;
+	margin-bottom: 0;
 }
 
 .search-notes svg {

@@ -4,7 +4,11 @@ import db from "../firebase";
 export const getNote = createAsyncThunk(
   "/note/getNote",
   async ({ notebook, noteId }, thunk) => {
+    const user = JSON.parse(localStorage.getItem("user"));
+
     const doc = await db
+      .collection("users")
+      .doc(user.id)
       .collection("notebooks")
       .doc(notebook)
       .collection("notes")
