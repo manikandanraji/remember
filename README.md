@@ -65,7 +65,7 @@ REACT_APP_MEASUREMENT_ID=[x]
 
 ![YT Video Embed](screenshots/video_embed.png)
 
-### Link Previes and Checkboxes (Nord)
+### Link Previews and Checkboxes (Nord)
 
 ![Link Previes and Checkboxes](screenshots/link_previews_checkboxes.png)
 
