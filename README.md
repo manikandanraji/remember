@@ -49,6 +49,8 @@ REACT_APP_MEASUREMENT_ID=[x]
 
 ## Watch the Demo
 
+[![Video](screenshots/editor_dark.png)](https://www.youtube.com/watch?v=LOxviFtsTOU "Remember Demo")
+
 ## Screenshots
 
 ### Editor (Solarized Dark)

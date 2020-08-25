@@ -18,6 +18,11 @@
   fill: var(--primaryColor);
   height: 18px;
   width: 18px;
+	cursor: pointer;
+}
+
+.editor-header h3 {
+	cursor: pointer;
 }
 
 .note-cover {

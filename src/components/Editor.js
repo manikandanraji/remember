@@ -49,13 +49,13 @@ const Editor = () => {
     }
 
     const description =
-      data.blocks.find((block) => block.type === "paragraph").data.text || "";
+      data.blocks.find((block) => block.type === "paragraph") || "";
 
     const updatedNote = {
       ...note,
       title: title.data.text,
-      description,
-      data: JSON.stringify(data),
+      description: description?.data?.text ? description.data.text : "",
+      data: data ? JSON.stringify(data) : "",
     };
 
     saveNote(updatedNote).then(() => {
@@ -65,7 +65,7 @@ const Editor = () => {
   };
 
   useEffect(() => {
-    if (editor) {
+    if (editor && editor.isReady) {
       editor.isReady.then(() => editor.destroy());
     }
 
