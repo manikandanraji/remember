@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./Modal";
 import Options from "./Options";
-import { HamburgerIcon, OptionsIcon, CloseIcon } from "./Icons";
+import { HamburgerIcon, OptionsIcon } from "./Icons";
 import { getNotes } from "../reducers/notes";
 import { clearNote, getNote } from "../reducers/note";
 import { closeOptionsModal, openOptionsModal } from "../reducers/modal";
@@ -16,8 +16,6 @@ import "./editor.css";
 const editor = createNewEditor();
 
 const Editor = () => {
-  const editorRef = useRef(null);
-
   const dispatch = useDispatch();
   const note = useSelector((state) => state.note);
   const { optionsModal } = useSelector((state) => state.modal);
@@ -74,10 +72,11 @@ const Editor = () => {
 
   return (
     <div className="editor">
-      <div className="header">
+      <div className="editor-header">
         <HamburgerIcon onClick={() => dispatch(openSidebar())} />
         <h3 onClick={() => dispatch(closeSidebar())}>Remember</h3>
       </div>
+
       <div className="input-cover">
         <label htmlFor="add-cover">
           <img
@@ -107,11 +106,7 @@ const Editor = () => {
         </Modal>
       )}
 
-      <div
-        style={{ display: !note.data ? "none" : "" }}
-        id="editorjs"
-        ref={editorRef}
-      ></div>
+      <div style={{ display: !note.data ? "none" : "" }} id="editorjs"></div>
     </div>
   );
 };

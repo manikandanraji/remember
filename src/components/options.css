@@ -3,6 +3,7 @@
   top: 30%;
   transform: translateY(-50%);
   margin: auto;
+
   width: 390px;
   background-color: var(--bg);
   display: flex;
@@ -12,13 +13,20 @@
   box-shadow: var(--bs1);
 }
 
-.header {
+.options .header {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--ruler);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+
+.options .header svg {
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+	fill: var(--primaryColor);
 }
 
 .options span {
@@ -30,7 +38,8 @@
 .action {
   margin-bottom: 0.5rem;
   cursor: pointer;
-  padding: 0.3rem 1rem;
+  padding-left: 1rem;
+	margin-top: 0.5rem;
 }
 
 .action svg {
@@ -43,6 +52,6 @@
 
 @media screen and (max-width: 440px) {
   .options {
-		width: 300px;
+		width: 320px;
   }
 }

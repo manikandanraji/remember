@@ -3,9 +3,21 @@
   margin-left: 500px;
 }
 
-.editor .header {
+.editor-header {
   background-color: var(--bg);
-	margin-bottom: 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 40px;
+  display: none;
+}
+
+.editor-header svg {
+  fill: var(--primaryColor);
+  height: 18px;
+  width: 18px;
 }
 
 .note-cover {
@@ -72,5 +84,10 @@
 
   .editor {
     margin-left: 0;
+  }
+
+  .editor-header {
+		display: block;
+		display: flex;
   }
 }

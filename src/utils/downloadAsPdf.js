@@ -1,25 +1,50 @@
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 
-export default ({ title, bg, dom }) => {
-  html2canvas(dom, {
-    scale: 5,
-    allowTaint: true,
-    useCORS: true,
-    backgroundColor: bg,
-  }).then((canvas) => {
-    const image = canvas.toDataURL("image/jpeg", 1.0);
-    const pdf = new jsPDF({
-      orientation: "portrait",
-      unit: "px",
-      format: "a4",
-    });
+// I didn't fully understood the internals of this function yet
+// original source: https://github.com/AmruthPillai/Reactive-Resume
+export default ({ title, bg, dom }) =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      html2canvas(dom, {
+        scale: 5,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: bg,
+      }).then((canvas) => {
+        const image = canvas.toDataURL("image/jpeg", 80 / 100);
 
-    const ratio = canvas.width / canvas.height;
-    const width = pdf.internal.pageSize.getWidth();
-    const height = width / ratio;
+        const doc = new jsPDF({
+          orientation: "portrait",
+          unit: "px",
+          format: [canvas.width, canvas.height],
+        });
 
-    pdf.addImage(image, "JPEG", 0, 0, width, height);
-    pdf.save(`${title}.pdf`);
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+
+        const widthRatio = pageWidth / canvas.width;
+        const heightRatio = pageHeight / canvas.height;
+        const ratio = widthRatio > heightRatio ? heightRatio : widthRatio;
+
+        const canvasWidth = canvas.width * ratio;
+        const canvasHeight = canvas.height * ratio;
+
+        const marginX = (pageWidth - canvasWidth) / 2;
+        const marginY = (pageHeight - canvasHeight) / 2;
+
+        doc.addImage(
+          image,
+          "JPEG",
+          marginX,
+          marginY,
+          canvasWidth,
+          canvasHeight,
+          null,
+          "SLOW"
+        );
+        doc.save(`${title}.pdf`);
+        resolve();
+      });
+    }, 250);
   });
-};
