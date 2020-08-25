@@ -22,18 +22,17 @@ const Signup = ({ login }) => {
         .auth()
         .createUserWithEmailAndPassword(email.value, password1.value)
         .then(async (data) => {
-
-					const user = {
-						id: data.user.uid, 
-						email: data.user.email,
-						name: username.value
-					}
+          const user = {
+            id: data.user.uid,
+            email: data.user.email,
+            name: username.value,
+          };
 
           await db.collection("users").doc(data.user.uid).set(user);
 
           localStorage.setItem("user", JSON.stringify(user));
 
-					dispatch(loginUser(user));
+          dispatch(loginUser(user));
         });
     }
   };

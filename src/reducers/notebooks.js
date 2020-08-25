@@ -4,8 +4,12 @@ import db from "../firebase";
 export const getNotebooks = createAsyncThunk(
   "notebooks/getNotebooks",
   async () => {
-		const user = JSON.parse(localStorage.getItem("user"));
-    const snapshot = await db.collection("users").doc(user.id).collection("notebooks").get();
+    const user = JSON.parse(localStorage.getItem("user"));
+    const snapshot = await db
+      .collection("users")
+      .doc(user.id)
+      .collection("notebooks")
+      .get();
 
     const notebooks = [];
     snapshot.forEach((doc) => {

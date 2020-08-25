@@ -7,8 +7,8 @@ export const getNotes = createAsyncThunk(
     const user = JSON.parse(localStorage.getItem("user"));
 
     const snapshot = await db
-			.collection("users")
-			.doc(user.id)
+      .collection("users")
+      .doc(user.id)
       .collection("notebooks")
       .doc(notebook)
       .collection("notes")

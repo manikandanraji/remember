@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Sidebar from "./Sidebar";
 import Notes from "./Notes";
 import Editor from "./Editor";

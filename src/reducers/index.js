@@ -14,5 +14,5 @@ export default combineReducers({
   theme,
   modal,
   sidebar,
-	user,
+  user,
 });

@@ -65,9 +65,9 @@ const Editor = () => {
   };
 
   useEffect(() => {
-		if(editor) {
-			editor.isReady.then(() => editor.destroy());
-		}
+    if (editor) {
+      editor.isReady.then(() => editor.destroy());
+    }
 
     if (note.data) {
       setEditor(createNewEditor(JSON.parse(note.data)));

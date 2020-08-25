@@ -253,7 +253,7 @@ textarea {
 }
 
 .link-tool__content--rendered:hover {
-  box-shadow: var(--bs1);
+  box-shadow: none;
 }
 
 .link-tool__input {
@@ -261,6 +261,10 @@ textarea {
   box-shadow: var(--bs1);
   border-radius: 4px;
   background: var(--tertiaryColor);
+}
+
+.link-tool__anchor {
+	color: var(--secondaryColor) !important;
 }
 
 /* ImageTool */
