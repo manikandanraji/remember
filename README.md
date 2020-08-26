@@ -6,8 +6,6 @@ Remember is built with React, Redux Toolkit and Firebase. Remeber uses firestore
 
 Remember uses three pane layout to organize, edit and save your notes. This layout is borrowed from [Bear](https://bear.app) notetaking app
 
-<a href="https://www.buymeacoffee.com/manikandanraji" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 160px !important;border-radius: 4px" ></a>
-
 ## Core Dependencies
 
 | Package               | For              |
