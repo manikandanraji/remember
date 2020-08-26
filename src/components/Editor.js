@@ -48,8 +48,7 @@ const Editor = () => {
       return;
     }
 
-    const description =
-      data.blocks.find((block) => block.type === "paragraph") || "";
+    const description = data.blocks.find((block) => block.type === "paragraph");
 
     const updatedNote = {
       ...note,

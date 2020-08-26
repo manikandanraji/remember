@@ -24,7 +24,6 @@ export const darkTheme = {
   "--ruler": "#ffffff12",
 };
 
-/* solarized dark */
 export const solarizedDarkTheme = {
   "--bg": "#00323E",
   "--primaryColor": "#A1ACAB",
@@ -38,7 +37,6 @@ export const solarizedDarkTheme = {
   "--ruler": "#001C21",
 };
 
-/* solarized light */
 export const solarizedLightTheme = {
   "--bg": "#FFFDF7",
   "--primaryColor": "#24292E",
@@ -52,7 +50,6 @@ export const solarizedLightTheme = {
   "--ruler": "#EEE8D5",
 };
 
-/* gruvbox dark */
 export const gruvboxDarkTheme = {
   "--bg": "#282828",
   "--primaryColor": "#EBDAB4",
@@ -66,7 +63,6 @@ export const gruvboxDarkTheme = {
   "--ruler": "#3C3836",
 };
 
-/* nord theme */
 export const nordTheme = {
   "--bg": "#2E3440",
   "--primaryColor": "#D8DEE9",
