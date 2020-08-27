@@ -1,4 +1,4 @@
-# Remember <a href="https://trackgit.com"><img src="https://sfy.cx/u/nYg" alt="trackgit-views" /></a>
+# Remember
 
 Remember is an notetaking application that allows you to take notes by including text, images, videos, links, lists, checkboxes and support for code snippets, file attachments can be expected in the near future.
 
