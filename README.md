@@ -1,4 +1,4 @@
-# Remember
+# Remember <a href="https://trackgit.com"><img src="https://sfy.cx/u/nYg" alt="trackgit-views" /></a>
 
 Remember is an notetaking application that allows you to take notes by including text, images, videos, links, lists, checkboxes and support for code snippets, file attachments can be expected in the near future.
 
@@ -73,3 +73,4 @@ REACT_APP_MEASUREMENT_ID=[x]
 
 1. Support for code snippets, quote, file attachments
 2. Export options: HTML, Markdown
+
