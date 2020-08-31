@@ -31,7 +31,7 @@ Remember uses three pane layout to organize, edit and save your notes. This layo
 # https://api.cloudinary.com/v1_1/CLOUD_NAME/image/upload
 REACT_APP_UPLOAD_IMAGE_URL=[x]
 
-# firebase cloud funtion http endpoint for link preview
+# http endpoint for previewing links (firebase cloud fuction 'functions/index.js')
 REACT_APP_LINK_PREVIEW=[x]
 
 # firebase config
