@@ -6,6 +6,7 @@ Remember is built with React, Redux Toolkit and Firebase. Remeber uses firestore
 
 Remember uses three pane layout to organize, edit and save your notes. This layout is borrowed from [Bear](https://bear.app) notetaking app
 
+
 ## Core Dependencies
 
 | Package               | For              |
@@ -46,6 +47,10 @@ REACT_APP_MEASUREMENT_ID=[x]
 ```
 
 3. Then run <code>npm i && npm start</code>
+
+## Chrome Extension
+
+[ravisojitra](https://github.com/ravisojitra) created a chrome extension which allows you to capture, edit and save your notes offline, here's the [repo](https://github.com/ravisojitra/notebook)
 
 ## Watch the Demo
 
