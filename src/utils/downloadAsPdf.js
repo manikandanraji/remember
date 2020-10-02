@@ -1,8 +1,6 @@
 import html2canvas from "html2canvas";
 import { jsPDF } from "jspdf";
 
-// I didn't fully understood the internals of this function yet
-// original source: https://github.com/AmruthPillai/Reactive-Resume
 export default ({ title, bg, dom }) =>
   new Promise((resolve) => {
     setTimeout(() => {
