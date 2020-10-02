@@ -4,7 +4,7 @@ Remember is an notetaking application that allows you to take notes by including
 
 Remember is built with React, Redux Toolkit and Firebase. Remeber uses firestore to store the user notes and it uses Editor.js library for editing the notes.
 
-Remember uses three pane layout to organize, edit and save your notes. This layout is borrowed from [Bear](https://bear.app) notetaking app
+Remember uses three pane layout to organize, edit and save your notes.
 
 
 ## Core Dependencies
