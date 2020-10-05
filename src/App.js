@@ -5,14 +5,14 @@ import ProtectedRoutes from "./components/ProtectedRoutes";
 import { applyTheme } from "./utils";
 
 const App = () => {
-	const { theme } = useSelector(state => state.theme);
-	const user = useSelector(state => state.user);
+  const { theme } = useSelector((state) => state.theme);
+  const user = useSelector((state) => state.user);
 
-	useEffect(() => {
-		applyTheme(theme);
-	}, [theme]);
+  useEffect(() => {
+    applyTheme(theme);
+  }, [theme]);
 
-	return <>{user.name ? <ProtectedRoutes /> : <Auth />}</>;
+  return <>{user.name ? <ProtectedRoutes /> : <Auth />}</>;
 };
 
 export default App;
