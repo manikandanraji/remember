@@ -9,13 +9,13 @@ export default ({ title, bg, dom }) =>
         allowTaint: true,
         backgroundColor: bg,
       }).then((canvas) => {
-        saveAs(canvas.toDataURL("image/jpeg", 80 / 100), `${title}.png`);
+        save(canvas.toDataURL("image/jpeg", 80 / 100), `${title}.png`);
       });
     }, 250);
   });
 
 // https://stackoverflow.com/questions/31656689/how-to-save-img-to-users-local-computer-using-html2canvas
-const downloadAsPNG = (uri, filename) => {
+const save = (uri, filename) => {
   const link = document.createElement("a");
 
   if (typeof link.download === "string") {
